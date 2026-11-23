@@ -371,67 +371,51 @@ const TL={
 };
 const TLKW={"22":"overload spill conveyor motor trip","1":"emergency hinto pinto kable","3":"walang net buhol kutsilyo","5":"plastic film photocell walang wrapping","6":"bara barado puno","17":"puno bale","OVL":"kuryente sobra karga","GATE":"gate bukas platform","OIL":"langis mababa tagas","LOCK":"naka-lock langis","FILTER":"filter barado palitan","COLD":"malamig yelo nagyelo heater"};
 E.forEach(e=>{ e.tl = e.pump ? PUMP.tl(e.pump) : TL[e.code]; e.kw += " "+(TLKW[e.code]||"mataas presyon"); });
-/* Mótorvarnir / mjúkræsar úr rafteikningu 1193 (bls. 5–7, 32). Númer 18–21 og 23 eru líkleg út frá Error 22 = X114. */
+/* Mótorvarnir / mjúkræsar úr rafteikningu 1193 (bls. 5–7, 32). Engin villunúmer – þekkjast á X-númerinu á skjánum. */
 (function(){
 const M=[
- {code:"18",x:"X110",dev:"K1",br:"F1",m:"M1",kw:"30 kW",pg:"5, 32",
-  n:{is:"stóri dælumótorinn",en:"large pump motor",lt:"didysis siurblio variklis",tl:"malaking pump motor"},soft:1},
- {code:"19",x:"X111",dev:"K2",br:"F2",m:"M2",kw:"15 kW",pg:"5, 32",
-  n:{is:"litli dælumótor 1",en:"small pump motor 1",lt:"mažasis siurblio variklis 1",tl:"maliit na pump motor 1"},soft:1},
- {code:"20",x:"X112",dev:"K3",br:"F3",m:"M3",kw:"15 kW",pg:"6, 32",
-  n:{is:"litli dælumótor 2",en:"small pump motor 2",lt:"mažasis siurblio variklis 2",tl:"maliit na pump motor 2"},soft:1},
- {code:"21",x:"X113",dev:"K4",br:"F4",m:"M4",kw:"7,5 kW",pg:"6, 32",
-  n:{is:"litli dælumótor 3",en:"small pump motor 3",lt:"mažasis siurblio variklis 3",tl:"maliit na pump motor 3"},soft:1},
- {code:"23",x:"X115",dev:"Q6",br:"F5",m:"M6",kw:"3,7 A",pg:"7, 32",
-  n:{is:"spillfæriband 2",en:"spillage conveyor 2",lt:"nubyrų konvejeris 2",tl:"spillage conveyor 2"},soft:0}
+ {x:"X110",dev:"K1",br:"F1",m:"M1",kw:"30 kW",pg:"5, 32",soft:1,n:{is:"stóri dælumótorinn",en:"large pump motor",lt:"didysis siurblio variklis",tl:"malaking pump motor"}},
+ {x:"X111",dev:"K2",br:"F2",m:"M2",kw:"15 kW",pg:"5, 32",soft:1,n:{is:"litli dælumótor M2",en:"small pump motor M2",lt:"mažasis siurblio variklis M2",tl:"maliit na pump motor M2"}},
+ {x:"X112",dev:"K3",br:"F3",m:"M3",kw:"15 kW",pg:"6, 32",soft:1,n:{is:"litli dælumótor M3",en:"small pump motor M3",lt:"mažasis siurblio variklis M3",tl:"maliit na pump motor M3"}},
+ {x:"X113",dev:"K4",br:"F4",m:"M4",kw:"7,5 kW",pg:"6, 32",soft:1,n:{is:"litli dælumótor M4",en:"small pump motor M4",lt:"mažasis siurblio variklis M4",tl:"maliit na pump motor M4"}},
+ {x:"X115",dev:"Q6",br:"F5",m:"M6",kw:"3,7 A",pg:"7, 32",soft:0,n:{is:"spillfæriband 2",en:"spillage conveyor 2",lt:"nubyrų konvejeris 2",tl:"spillage conveyor 2"}}
 ];
 const T={
- is:d=>({h:"Yfirálag – "+d.n.is+" ("+d.m+")",c:[
+ is:d=>({h:"Yfirálag ("+d.x+") – "+d.n.is,c:[
    [(d.soft?"Mjúkræsir ":"Mótorvörn ")+d.dev+" fyrir "+d.n.is+" ("+d.m+", "+d.kw+") hefur slegið út",[
      "Stöðvaðu vélina, snúðu lyklinum á 0 og hafðu hann á þér.",
-     d.soft?"Athugaðu hvort pressan sé stífluð eða yfirfull (sjá Error 6) og hvort olíustaða sé í lagi – of mikið álag á dælu veldur oft útslætti.":"Skoðaðu "+d.n.is+": er það stíflað, fast eða frosið? Er efni vafið um valsana? Liggur gúmmíbeltið fyrir miðju?",
-     "Fjarlægðu orsökina.",
-     d.soft?"Láttu rafvirkja athuga mjúkræsinn "+d.dev+" (Allen-Bradley SMC-3) og varrofann "+d.br+" í rafmagnsskápnum og endursetja.":"Endursettu mótorvarnarrofann "+d.dev+" ("+d.m+") í rafmagnsskápnum.",
-     "Ýttu á EXIT/RESET og ræstu aftur."]],
-   ["Ef villan kemur strax aftur",["Ekki endursetja aftur og aftur.","Hafðu samband við rafvirkja eða Flexus."]]],
+     "Endursettu mótorvörnina í rafmagnsskápnum ("+d.dev+" / "+d.m+") og ræstu vélina eins og venjulega.",
+     "Ef villan helst: hafðu samband við þjónustuaðila eða rafvirkja."]]],
   w:"Rafmagnsskápurinn er aðeins opnaður af þeim sem hafa leyfi til þess. Hætta á raflosti.",
-  n:"Rafteikning 1193: inntak "+d.x+" = "+d.dev+" / "+d.m+". Villunúmerið "+d.code+" er líklegt (út frá Error 22 = X114) – staðfestu með X-númerinu á skjánum."}),
- en:d=>({h:"Overload – "+d.n.en+" ("+d.m+")",c:[
+  n:"Rafteikning 1193: inntak "+d.x+" = "+(d.soft?"mjúkræsir ":"mótorvörn ")+d.dev+", mótor "+d.m+" (varrofi "+d.br+"). Villunúmerið sem birtist á skjánum er ekki í gögnunum – sendið mynd af skjánum svo það bætist við."}),
+ en:d=>({h:"Overload ("+d.x+") – "+d.n.en,c:[
    [(d.soft?"Soft starter ":"Motor protection ")+d.dev+" for "+d.n.en+" ("+d.m+", "+d.kw+") has tripped",[
      "Stop the machine, turn the key to 0 and keep it with you.",
-     d.soft?"Check whether the baler is blocked or overloaded (see Error 6) and the oil level – pump overload is a common cause.":"Check the "+d.n.en+": blocked, stuck or frozen? Material wound around the rollers? Rubber belt centred?",
-     "Remove the cause.",
-     d.soft?"Have an electrician check soft starter "+d.dev+" (Allen-Bradley SMC-3) and breaker "+d.br+" in the electrical cabinet and reset.":"Reset motor protection switch "+d.dev+" ("+d.m+") in the electrical cabinet.",
-     "Press EXIT/RESET and start again."]],
-   ["If the error returns immediately",["Do not keep resetting.","Contact an electrician or Flexus."]]],
+     "Reset the motor protection in the electrical cabinet ("+d.dev+" / "+d.m+") and start the machine as usual.",
+     "If the error persists: contact a service technician or electrician."]]],
   w:"Only authorised persons may open the electrical cabinet. Risk of electric shock.",
-  n:"Electrical drawing 1193: input "+d.x+" = "+d.dev+" / "+d.m+". Error number "+d.code+" is likely (based on Error 22 = X114) – confirm with the X number on the display."}),
- lt:d=>({h:"Perkrova – "+d.n.lt+" ("+d.m+")",c:[
+  n:"Electrical drawing 1193: input "+d.x+" = "+(d.soft?"soft starter ":"motor protection ")+d.dev+", motor "+d.m+" (breaker "+d.br+"). The error number on the display is not in the documents – send a photo of the display so it can be added."}),
+ lt:d=>({h:"Perkrova ("+d.x+") – "+d.n.lt,c:[
    ["Suveikė "+(d.soft?"švelnusis paleidiklis ":"variklio apsauga ")+d.dev+" ("+d.m+", "+d.kw+")",[
      "Sustabdykite mašiną, pasukite raktą į 0 ir laikykite jį prie savęs.",
-     d.soft?"Patikrinkite, ar presas neužsikimšęs ar neperpildytas (žr. Error 6) ir alyvos lygį – dažna priežastis yra siurblio perkrova.":"Patikrinkite konvejerį: ar neužsikimšęs, neįstrigęs, neprišalęs? Ar ant volų neapsivyniojo medžiaga? Ar juosta centre?",
-     "Pašalinkite priežastį.",
-     d.soft?"Tegul elektrikas patikrina švelnųjį paleidiklį "+d.dev+" (Allen-Bradley SMC-3) ir automatinį jungiklį "+d.br+" elektros spintoje ir atstato.":"Elektros spintoje atstatykite variklio apsaugos jungiklį "+d.dev+" ("+d.m+").",
-     "Paspauskite EXIT/RESET ir paleiskite iš naujo."]],
-   ["Jei klaida iškart kartojasi",["Nebeatstatinėkite vėl ir vėl.","Kreipkitės į elektriką arba Flexus."]]],
+     "Elektros spintoje atstatykite variklio apsaugą ("+d.dev+" / "+d.m+") ir paleiskite mašiną kaip įprasta.",
+     "Jei klaida išlieka: kreipkitės į servisą arba elektriką."]]],
   w:"Elektros spintą gali atidaryti tik įgalioti asmenys. Elektros smūgio pavojus.",
-  n:"Elektros schema 1193: įėjimas "+d.x+" = "+d.dev+" / "+d.m+". Klaidos numeris "+d.code+" yra tikėtinas – patikrinkite pagal X numerį ekrane."}),
- tl:d=>({h:"Overload – "+d.n.tl+" ("+d.m+")",c:[
+  n:"Elektros schema 1193: įėjimas "+d.x+" = "+d.dev+", variklis "+d.m+" (jungiklis "+d.br+"). Ekrane rodomo klaidos numerio dokumentuose nėra – atsiųskite ekrano nuotrauką."}),
+ tl:d=>({h:"Overload ("+d.x+") – "+d.n.tl,c:[
    ["Nag-trip ang "+(d.soft?"soft starter ":"motor protection ")+d.dev+" ng "+d.n.tl+" ("+d.m+", "+d.kw+")",[
      "Itigil ang makina, iikot ang susi sa 0 at hawakan ito.",
-     d.soft?"Tingnan kung barado o sobrang puno ang baler (tingnan ang Error 6) at ang antas ng langis – madalas na sanhi ang overload ng pump.":"Suriin ang conveyor: barado, naipit o nagyelo? May nakapulupot sa roller? Nasa gitna ang belt?",
-     "Alisin ang sanhi.",
-     d.soft?"Ipasuri sa electrician ang soft starter "+d.dev+" (Allen-Bradley SMC-3) at breaker "+d.br+" sa electrical cabinet at i-reset.":"I-reset ang motor protection switch "+d.dev+" ("+d.m+") sa electrical cabinet.",
-     "Pindutin ang EXIT/RESET at simulan muli."]],
-   ["Kung bumalik agad ang error",["Huwag paulit-ulit na i-reset.","Tumawag sa electrician o sa Flexus."]]],
+     "I-reset ang motor protection sa electrical cabinet ("+d.dev+" / "+d.m+") at simulan ang makina gaya ng dati.",
+     "Kung hindi mawala ang error: tumawag sa service o electrician."]]],
   w:"Ang may pahintulot lamang ang maaaring magbukas ng electrical cabinet. Panganib ng pagkakuryente.",
-  n:"Electrical drawing 1193: input "+d.x+" = "+d.dev+" / "+d.m+". Ang error number "+d.code+" ay malamang – kumpirmahin gamit ang X number sa display."})
+  n:"Electrical drawing 1193: input "+d.x+" = "+d.dev+", motor "+d.m+" (breaker "+d.br+"). Wala sa mga dokumento ang error number sa display – magpadala ng litrato ng display."})
 };
-const at=E.findIndex(e=>e.code==="22");
-const add=M.map(d=>({code:d.code,screen:"Error "+d.code+"? Overload alarm ("+d.x+") – "+d.m,ref:"rafteikning/el. drawing 1193 p. "+d.pg,
-  kw:"overload yfirálag perkrova "+d.x.toLowerCase()+" "+d.dev.toLowerCase()+" "+d.br.toLowerCase()+" "+d.m.toLowerCase()+" "+(d.soft?"pump dæla siurblys soft starter mjúkræsir":"spill conveyor spillfæriband nubyrų konvejeris"),
+const add=M.map(d=>({code:d.x,screen:"Overload alarm ("+d.x+")",ref:"rafteikning/el. drawing 1193 p. "+d.pg,
+  kw:"overload yfirálag perkrova "+d.x.toLowerCase()+" "+d.dev.toLowerCase()+" "+d.br.toLowerCase()+" "+d.m.toLowerCase(),
   is:T.is(d),en:T.en(d),lt:T.lt(d),tl:T.tl(d)}));
-E.splice(at,0,...add.filter(a=>+a.code<22)); E.splice(E.findIndex(e=>e.code==="22")+1,0,...add.filter(a=>+a.code>22));
+E.splice(E.findIndex(e=>e.code==="OVL"),0,...add);
+const e1=E.find(e=>e.code==="1");if(e1)e1.kw+=" x000 x120 x130 x131 x132 x133 x134 x135 safetygate cable pull";
+const eg=E.find(e=>e.code==="GATE");if(eg)eg.kw+=" x136 x117 sr2";
 })();
 
 
@@ -472,7 +456,7 @@ function search(){
   const raw=$("q").value.trim(), q=norm(raw), out=$("results");
   $("chips").classList.toggle("hide",!!q);
   if(!q){out.innerHTML=`<div class="empty">${UI[L].hint}</div>`;return}
-  const xq=q.match(/x11([0-5])/);const num=xq?({"0":"18","1":"19","2":"20","3":"21","4":"22","5":"23"})[xq[1]]:/f5/.test(q)?"22":(q.match(/\d+/)||[])[0]; let hits=[];
+  const num=/f5|x114/.test(q)?"22":/x\d/.test(q)?null:(q.match(/\d+/)||[])[0]; let hits=[];
   if(num) hits=E.filter(e=>isNum(e.code)&&+e.code===+num);
   if(!hits.length){const words=q.replace(/\berr(or)?\b/g," ").split(/[\s,.\/–-]+/).filter(w=>w.length>2);
     const ph=E.filter(e=>e.hay.includes(q));
@@ -500,7 +484,7 @@ let tessP=null;
 function loadTess(){if(!tessP)tessP=new Promise((res,rej)=>{const sc=document.createElement('script');sc.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';sc.onload=res;sc.onerror=rej;document.head.appendChild(sc)});return tessP}
 function pickQuery(txt){const t=txt.toUpperCase().replace(/[|]/g,'I');
   if(/F[5S][-–]?2|[X%]114/.test(t))return "22";
-  {const xm=t.match(/[X%]11([0-5])/);if(xm)return ({"0":"18","1":"19","2":"20","3":"21","5":"23"})[xm[1]];}
+  {const xm=t.match(/[X%]1([123])([0-7])/);if(xm)return "x1"+xm[1]+xm[2];}
   let m=t.match(/ERR(?:OR)?\s*[:.]?\s*0?(\d{1,2})/); if(m) return m[1].replace(/^0/,'');
   const keys=["NO NET","NO WRAPPING","EMERGENCY","BALE CONVEYOR","OVERLOAD","PLATFORM GATE","LOCKED","LOW OIL","OIL LEVEL","FILTER","HIGH PRESSURE PUMP"];
   for(const k of keys){if(t.includes(k)){if(k==="HIGH PRESSURE PUMP"){const p=t.match(/PUMP\s*(\d)/);const map={"1":"6","2":"7","3":"8","4":"8","5":"9","6":"9","7":"10","8":"11","9":"11"};if(p)return map[p[1]];}return k.toLowerCase();}}
