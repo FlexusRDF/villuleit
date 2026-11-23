@@ -190,6 +190,461 @@ const E = [
   ["Ryšulių konvejeris pilnas",["Nuimkite ryšulius nuo konvejerio (ryšulių griebtuvu ant krautuvo).","Nuėmus ryšulius mašina automatiškai pasileidžia iš naujo."]],
   ["Konvejeris pilnas IR įjungtas avarinis stabdymas",["Ištuštinkite ryšulių konvejerį.","Vėl įjunkite avarinio stabdymo lyną (mėlynas jungiklis iš „off“ į „run“).","Paspauskite RESET ir paleiskite iš naujo."]]]}},
 
+{code:"22", screen:"Error 22: Overload alarm F5-2 (X114)", ref:"9, 31 · rafteikning/el. drawing 1193 p. 7, 32",
+ kw:"overload f5-2 f5 x114 q5 m5 spill conveyor spillfæriband yfirálag mótorvörn spill nubyrų konvejeris perkrova spillage",
+ is:{h:"Yfirálag – spillfæriband 1 (M5)", c:[
+  ["Mótorvörn Q5 fyrir spillfæriband 1 (M5) hefur slegið út",["Stöðvaðu vélina, snúðu lyklinum á 0 og hafðu hann á þér.","Skoðaðu spillfæribandið undir pressunni: er það stíflað, fast eða frosið? Er efni vafið um valsana? Liggur gúmmíbeltið fyrir miðju?","Fjarlægðu það sem stíflar og hreinsaðu valsana.","Endursettu mótorvarnarrofann Q5 (merktur M5 / spill conveyor 1) í rafmagnsskápnum.","Settu lykilinn í, ýttu á EXIT/RESET og ræstu aftur."]],
+  ["Ef villan kemur strax aftur",["Ekki endursetja aftur og aftur.","Hafðu samband við rafvirkja eða Flexus – mótorinn eða rafmagnið getur verið bilað."]]],
+  w:"Rafmagnsskápurinn er aðeins opnaður af þeim sem hafa leyfi til þess. Hætta á raflosti.",
+  n:"Samkvæmt rafteikningu 1193: inntak X114 = mótorvörn Q5 (2,15 A) fyrir M5 = spillfæriband 1."},
+ en:{h:"Overload – spillage conveyor 1 (M5)", c:[
+  ["Motor protection Q5 for spillage conveyor 1 (M5) has tripped",["Stop the machine, turn the key to 0 and keep it with you.","Check the spillage conveyor under the baler: is it blocked, stuck or frozen? Is material wound around the rollers? Is the rubber belt centred?","Remove the blockage and clean the rollers.","Reset motor protection switch Q5 (M5 / spill conveyor 1) in the electrical cabinet.","Put the key back, press EXIT/RESET and start again."]],
+  ["If the error returns immediately",["Do not keep resetting.","Contact an electrician or Flexus – the motor or electrical supply may be faulty."]]],
+  w:"Only authorised persons may open the electrical cabinet. Risk of electric shock.",
+  n:"Electrical drawing 1193: input X114 = motor protection Q5 (2.15 A) for M5 = spill conveyor 1."},
+ lt:{h:"Perkrova – nubyrų konvejeris 1 (M5)", c:[
+  ["Suveikė nubyrų konvejerio 1 (M5) variklio apsauga Q5",["Sustabdykite mašiną, pasukite raktą į 0 ir laikykite jį prie savęs.","Patikrinkite nubyrų konvejerį po presu: ar jis neužsikimšęs, neįstrigęs ar neprišalęs? Ar ant volų neapsivyniojo medžiaga? Ar guminė juosta centre?","Pašalinkite kliūtį ir nuvalykite volus.","Elektros spintoje atstatykite variklio apsaugos jungiklį Q5 (M5 / spill conveyor 1).","Įstatykite raktą, paspauskite EXIT/RESET ir paleiskite iš naujo."]],
+  ["Jei klaida iškart kartojasi",["Nebeatstatinėkite vėl ir vėl.","Kreipkitės į elektriką arba Flexus – gali būti sugedęs variklis arba elektros tiekimas."]]],
+  w:"Elektros spintą gali atidaryti tik įgalioti asmenys. Elektros smūgio pavojus.",
+  n:"Elektros schema 1193: įėjimas X114 = variklio apsauga Q5 (2,15 A), M5 = nubyrų konvejeris 1."}},
+{code:"OVL", screen:"OVERLOAD ALARM", ref:"9, 31",
+ kw:"overload yfirálag mótorvörn rafmagn rafmagnsskápur motor protection electrical cabinet perkrova variklio apsauga elektros spinta",
+ is:{h:"Yfirálag á rafkerfi", c:[["Rafkerfið er yfirlestað",["Endursettu mótorvarnarrofann (motor protection switch) í rafmagnsskápnum.","Ræstu vélina eins og venjulega.","Ef villan kemur aftur: hafðu samband við þjónustuaðila eða rafvirkja."]]], w:"Við allar truflanir í rafkerfi skal hafa samband við rafvirkja. Hætta á raflosti."},
+ en:{h:"Overload alarm", c:[["The electrical system is overloaded",["Reset the motor protection switch in the electrical cabinet.","Start the machine as usual.","If the error persists: contact a service technician or electrician."]]], w:"For any electrical disturbance, contact an electrician. Risk of electric shock."},
+ lt:{h:"Elektros sistemos perkrova", c:[["Elektros sistema perkrauta",["Elektros spintoje atstatykite variklio apsaugos jungiklį.","Paleiskite mašiną kaip įprasta.","Jei klaida kartojasi: kreipkitės į servisą arba elektriką."]]], w:"Esant bet kokiems elektros sistemos sutrikimams, kvieskite elektriką. Elektros smūgio pavojus."}},
+
+{code:"GATE", screen:"PLATFORM GATE OPEN", ref:"6, 10, 31",
+ kw:"platform gate hlið pallur öryggishlið opið platformos vartai atidaryti",
+ is:{h:"Öryggishlið á palli opið", c:[["Öryggishliðið á pallinum er opið",["Gakktu úr skugga um að enginn sé á pallinum.","Lokaðu öryggishliðinu.","Ýttu á bláa reset-hnappinn fyrir hliðið og ýttu á EXIT/RESET á skjánum."]]], n:"Þegar hliðið er opnað stöðvast pökkunararmurinn strax – en pressun HELDUR ÁFRAM."},
+ en:{h:"Platform gate open", c:[["The safety gate on the platform is open",["Make sure nobody is on the platform.","Close the safety gate.","Press the blue reset button for the gate and press EXIT/RESET on the display."]]], n:"When the gate is opened the wrapper arm stops immediately – but baling CONTINUES."},
+ lt:{h:"Atidaryti platformos vartai", c:[["Platformos apsauginiai vartai atidaryti",["Įsitikinkite, kad ant platformos nėra žmonių.","Uždarykite apsauginius vartus.","Paspauskite mėlyną vartų RESET mygtuką ir ekrane EXIT/RESET."]]], n:"Atidarius vartus vyniotuvo ranka sustoja iš karto – bet presavimas TĘSIASI."}},
+
+{code:"OIL", screen:"Attention LOW OIL LEVEL / FILL OIL AND RESET / CHECK OIL LEAKAGE", ref:"29, 31",
+ kw:"olía oil low level lág olíustaða leki leakage fill alyva žemas alyvos lygis nuotėkis",
+ is:{h:"Lág olíustaða", c:[["Olíustaða í vökvatanki of lág",["Stöðvaðu vélina alveg og ýttu á EXIT.","Fylltu á olíutankinn sem fyrst – aðeins ISO VG 32.","Leitaðu að olíuleka (slöngur, tjakkar, gírkassar)."]]]},
+ en:{h:"Low oil level", c:[["The hydraulic oil level is too low",["Stop the machine completely and press EXIT.","Fill the oil tank as soon as possible – only ISO VG 32.","Check for oil leakage (hoses, cylinders, gearboxes)."]]]},
+ lt:{h:"Žemas alyvos lygis", c:[["Per žemas hidraulinės alyvos lygis",["Visiškai sustabdykite mašiną ir paspauskite EXIT.","Kuo skubiau įpilkite alyvos – tik ISO VG 32.","Patikrinkite, ar nėra alyvos nuotėkio (žarnos, cilindrai, reduktoriai)."]]]}},
+
+{code:"LOCK", screen:"OIL LEVEL LOW, COMPUTER SYSTEM LOCKED, UNLOCK SYSTEM ONLY BY FILLING OIL", ref:"31",
+ kw:"locked læst olía oil computer system unlock užrakinta sistema alyva",
+ is:{h:"Kerfi læst vegna lágrar olíu", c:[["Olíustaða of lág – stýrikerfið læst",["Fylltu á olíu af gerðinni ISO VG 32.","Kerfið opnast sjálfkrafa þegar olíustaðan er orðin nægileg.","Leitaðu að olíuleka."]]]},
+ en:{h:"System locked – low oil", c:[["Oil level too low – control system locked",["Fill oil of type ISO VG 32.","The system unlocks automatically when the oil level is high enough.","Check for oil leakage."]]]},
+ lt:{h:"Sistema užrakinta dėl žemo alyvos lygio", c:[["Per žemas alyvos lygis – valdymo sistema užrakinta",["Įpilkite ISO VG 32 tipo alyvos.","Sistema atsirakina automatiškai, kai alyvos lygis pakankamas.","Patikrinkite, ar nėra alyvos nuotėkio."]]]}},
+
+{code:"FILTER", screen:"HIGH PRESSURE RETURN FILTER CHANGE", ref:"29, 31",
+ kw:"filter sía return filter bakrennsli stífluð filtras grąžinimo filtras užsikimšęs keisti",
+ is:{h:"Skipta um bakrennslissíu", c:[["Bakrennslissían er stífluð",["Stöðvaðu vélina alveg og ýttu á EXIT.","Skiptu um síu sem fyrst. Aðeins Flexus sía, vörunúmer 62-5001."]]]},
+ en:{h:"Change return filter", c:[["The return oil filter is clogged",["Stop the machine completely and press EXIT.","Change the filter as soon as possible. Only Flexus filter, art. no. 62-5001."]]]},
+ lt:{h:"Pakeiskite grąžinimo filtrą", c:[["Užsikimšęs grąžinimo alyvos filtras",["Visiškai sustabdykite mašiną ir paspauskite EXIT.","Kuo skubiau pakeiskite filtrą. Tik Flexus filtras, art. nr. 62-5001."]]]}},
+
+{code:"COLD", screen:"Cold weather / frozen scrapers", ref:"28",
+ kw:"kuldi frost frosið cold heater hitari olíuhitari scraper sköfur šaltis šala užšalo šildytuvas grandikliai",
+ is:{h:"Kuldi og frost (niður í −15 °C)", c:[["Ræsing í frosti",["Forhitaðu olíuna: handvirkur hamur, valmynd 3, HEATER On/Off.","Athugaðu að sköfur færibanda og gólfsköfur pressunnar séu ekki frosnar fastar.","Haltu stöðugu rafmagni á rafmagnsskáp, stjórnborði og olíuhitara.","Tæmdu vélina alltaf í lok dags – ekkert efni má vera eftir í kerfinu."]]]},
+ en:{h:"Cold weather (down to −15 °C)", c:[["Starting in freezing conditions",["Preheat the oil: manual mode, menu 3, HEATER On/Off.","Check that the conveyor scrapers and the floor scrapers are not frozen.","Keep constant power to the electrical cabinet, control panel and oil heater.","Always empty the machine at the end of the day – no material left in the system."]]]},
+ lt:{h:"Šaltis ir šalna (iki −15 °C)", c:[["Paleidimas šąlant",["Pašildykite alyvą: rankinis režimas, 3 meniu, HEATER On/Off.","Patikrinkite, ar konvejerių ir preso grindų grandikliai nėra prišalę.","Palaikykite nuolatinį maitinimą elektros spintai, valdymo pultui ir alyvos šildytuvui.","Darbo dienos pabaigoje visada ištuštinkite mašiną – sistemoje neturi likti medžiagos."]]]}}
+];
+E.forEach(e=>{ if(e.pump){ ["is","en","lt"].forEach(l=>e[l]=PUMP[l](e.pump)); } });
+
+/* Viðhaldsplan – þrjú tungumál. Hvert atriði: [is, en, lt] með {t, d}. */
+const T3=(is,en,lt)=>({is,en,lt});
+const M_DAILY=[
+ T3(["Tæma þéttivatn af loftpressu","Opna aftöppunartappann og tæma vatnið."],["Drain the compressor","Open the drain plug and empty the condensed water."],["Išleisti kondensatą iš kompresoriaus","Atsukite išleidimo kamštį ir išleiskite vandenį."]),
+ T3(["Halda loftpressu hreinni","Sérstaklega kæliflönsum á strokkum og heddum."],["Keep the compressor clean","Especially the cooling flanges of cylinders and heads."],["Kompresorių laikyti švarų","Ypač cilindrų ir galvučių aušinimo briaunas."]),
+ T3(["Hjól baggahólfsins","Athuga slit og að hjólin snúist frjálst. Hreinsa ef þarf."],["Chamber wheels","Check for wear and that they run freely. Clean if necessary."],["Kameros ratai","Patikrinti nusidėvėjimą ir ar laisvai sukasi. Jei reikia, išvalyti."]),
+ T3(["Legur á stóru mottunni","Skoða aftan frá: bil milli mottuhluta, legur úr miðju á öxli, aflagaðar legulokur."],["Big mat bearings","Check from behind: distance between mat sections, bearings off-centre on shafts, deformed bearing caps."],["Didžiojo kilimo guoliai","Apžiūrėti iš galo: tarpai tarp kilimo sekcijų, guoliai ne centre ant velenų, deformuoti guolių dangteliai."]),
+ T3(["Hreinsa öxla og valsa","Fjarlægja efni sem hefur safnast á öxla og valsa."],["Clean shafts and rollers","Remove material from shafts and rollers."],["Išvalyti velenus ir volus","Pašalinti ant velenų ir volų susikaupusią medžiagą."]),
+ T3(["Legur og boltar","Athuga slit, herða og skipta um ef þarf."],["Bearings and bolted joints","Check for wear, tighten and replace if needed."],["Guoliai ir varžtinės jungtys","Patikrinti nusidėvėjimą, priveržti, jei reikia – pakeisti."]),
+ T3(["Þrífa undir pökkunarvél",""],["Clean under the wrapping unit",""],["Išvalyti po vyniotuvu",""]),
+ T3(["Þrífa við tjakka og nema","Í kringum tjakka baggahólfs og snúningsarms. Nemar á sínum stað og ekki huldir."],["Clean around cylinders and sensors","Around bale chamber and turning arm cylinders. Sensors in place and not blocked."],["Išvalyti aplink cilindrus ir jutiklius","Aplink ryšulio kameros ir sukimo rankos cilindrus. Jutikliai savo vietose ir neuždengti."]),
+ T3(["Ljósnemi pökkunarvélar","Hreinn og laus við ryk."],["Wrapper photocell","Clean and free of dust."],["Vyniotuvo fotoelementas","Švarus, be dulkių."]),
+ T3(["Gúmmíbelti spillfæribanda","Yfirborð og hliðar, fyrir miðju á völsum, ekkert vafið um valsana."],["Spillage conveyor rubber belts","Surface and sides, centred on the rollers, nothing wound around the rollers."],["Nubyrų konvejerių guminės juostos","Paviršius ir kraštai, juosta volų centre, ant volų niekas neapsivyniojo."]),
+ T3(["Almennt öryggiseftirlit","Hliðrofar og neyðarstopp hrein og virk."],["General safety check","Gate switches and emergency stops clean and working."],["Bendra saugos patikra","Vartų jungikliai ir avariniai stabdikliai švarūs ir veikia."])
+];
+const M_END=[
+ T3(["Tæma vélina","Ekkert efni má vera eftir í kerfinu."],["Empty the machine","No material may be left in the system."],["Ištuštinti mašiną","Sistemoje neturi likti medžiagos."]),
+ T3(["Gólfsköfur","Keyra gólfsköfur (handvirkur hamur, valmynd 3)."],["Floor scrapers","Run the floor scrapers (manual mode, menu 3)."],["Grindų grandikliai","Paleisti grindų grandiklius (rankinis režimas, 3 meniu)."]),
+ T3(["Pallur og stigi","Þurr og hreinn til að forðast hálku."],["Platform and stairs","Dry and clean to avoid slipping."],["Platforma ir laiptai","Sausi ir švarūs, kad nebūtų slidu."]),
+ T3(["Stjórnborð og lyklar","Stjórnborð á þurrum stað, lyklar geymdir á öruggum stað."],["Control panel and keys","Panel in a dry place, keys stored safely."],["Valdymo pultas ir raktai","Pultas sausoje vietoje, raktai saugomi saugioje vietoje."])
+];
+const M_WEEK=[
+ T3(["Bil við stóru mottuna","Báðum megin: 5–15 mm milli hliðar hólfs og legu stóru mottunnar."],["Big mat gap","Both sides: 5–15 mm between chamber side and big mat bearing."],["Didžiojo kilimo tarpas","Abiejose pusėse: 5–15 mm tarp kameros šono ir didžiojo kilimo guolio."]),
+ T3(["Smurning 2× í viku (eða 500 baggar)","Allar liðlegur tjakka í baggahólfi (8) og snúningsarms (4)."],["Lubrication twice a week (or 500 bales)","All chamber cylinder link bearings (8) and turning arm cylinder (4)."],["Tepimas 2 k. per savaitę (arba 500 ryšulių)","Visi kameros cilindrų šarnyriniai guoliai (8) ir sukimo rankos cilindro (4)."]),
+ T3(["Smurning 1× í viku (eða 1000 baggar)","Legur hólfs, baggastopp, veltitjakkur, pökkunarborð, snúningsarmur, stóra mottan (136 punktar)."],["Lubrication once a week (or 1000 bales)","Chamber bearings, bale stop, tilt cylinder, wrapping table, turning arm, big mat (136 points)."],["Tepimas 1 k. per savaitę (arba 1000 ryšulių)","Kameros guoliai, ryšulio stabdiklis, vertimo cilindras, vyniojimo stalas, sukimo ranka, didysis kilimas (136 taškai)."]),
+ T3(["Keðjustrekking færibanda","Keðjan á að lyftast af plastrennunni 0,5–1 m á undan drifinu."],["Conveyor chain tension","Chain should leave the plastic slide bar 0.5–1 m before the drive."],["Konvejerių grandinių įtempimas","Grandinė turi pakilti nuo plastikinės juostos 0,5–1 m prieš pavarą."]),
+ T3(["Olíustöður og lekar","Loftpressa, vökvatankur, gírkassar og tjakkar."],["Oil levels and leaks","Compressor, hydraulic tank, gearboxes and cylinders."],["Alyvos lygiai ir nuotėkiai","Kompresorius, hidraulinis bakas, reduktoriai ir cilindrai."]),
+ T3(["Loftpressa","V-reim, einstefnu- og öryggislokar, loftsíur."],["Compressor","V-belt, non-return and safety valves, air filters."],["Kompresorius","V diržas, atbuliniai ir apsauginiai vožtuvai, oro filtrai."])
+];
+const M_MONTH=[
+ T3(["Mánaðarleg smurning (eða 4000 baggar)","Valsar, mötun, litla mottan, pökkunarvalsar, netbúnaður, hólfendar, pökkunararmur. Keðjur með keðjuolíu."],["Monthly lubrication (or 4000 bales)","Rollers, feeder, little mat, wrapper rollers, netting unit, chamber ends, wrapper arm. Chains with chain oil."],["Mėnesinis tepimas (arba 4000 ryšulių)","Volai, tiektuvas, mažasis kilimas, vyniotuvo volai, tinklo įrenginys, kameros galai, vyniotuvo ranka. Grandinės – grandinių alyva."]),
+ T3(["Ekki ofsmyrja Y-legur","Liðlegur (stóra mottan) þurfa hins vegar ríkulega feiti."],["Do not over-grease Y-bearings","Articulated bearings (big mat) need ample grease."],["Neperteplikite Y guolių","Šarnyriniams guoliams (didysis kilimas) reikia daug tepalo."])
+];
+const M_HOURS=[
+ ["25 h",T3("Fyrsta olíuskipti loftpressu (SAE 10W-30)","First compressor oil change (SAE 10W-30)","Pirmas kompresoriaus alyvos keitimas (SAE 10W-30)"),"202-220"],
+ ["100 h",T3("Olíuskipti loftpressu","Compressor oil change","Kompresoriaus alyvos keitimas"),"202-220"],
+ ["50 h",T3("Keðjustrekking og slit","Chain tension and wear","Grandinių įtempimas ir nusidėvėjimas"),"204-200, 304-200"],
+ ["50 h",T3("Smyrja 8 koppa","Grease the 8 nipples","Patepti 8 tepimo taškus"),"402-110"],
+ ["300 h",T3("Olía gírkassa (ISO VG 220)","Gearbox oil level (ISO VG 220)","Reduktoriaus alyvos lygis (ISO VG 220)"),"204-200"],
+ ["1000 h",T3("Smyrja legur","Lubricate bearings","Patepti guolius"),"205-110, 205-210"],
+ ["3000 h",T3("Olía gírkassa (SAE 80W/90)","Gearbox oil level (SAE 80W/90)","Reduktoriaus alyvos lygis (SAE 80W/90)"),"202-220"],
+ ["3000 h",T3("Olía gírkassa (ISO VG 220)","Gearbox oil level (ISO VG 220)","Reduktoriaus alyvos lygis (ISO VG 220)"),"304-200"],
+ ["3000 h / 18 m",T3("Skipta um vökvaolíu (ISO VG 32) og síu 62-5001","Change hydraulic oil (ISO VG 32) and filter 62-5001","Keisti hidraulinę alyvą (ISO VG 32) ir filtrą 62-5001"),"202-220"],
+ ["5000 h",T3("Olíuskipti gírkassa","Gearbox oil change","Reduktoriaus alyvos keitimas"),"205-110, 205-210"],
+ ["1×/ár · year · metai",T3("Smyrja legufestingar","Grease bearing brackets","Patepti guolių korpusus"),"204-200, 304-200"]
+];
+const M_OILS=[
+ [T3("Vökvaolía","Hydraulic oil","Hidraulinė alyva"),"ISO VG 32 (−10…+30 °C)"],
+ [T3("Bakrennslissía","Return filter","Grąžinimo filtras"),"Flexus 62-5001"],
+ [T3("Smurfeiti","Grease","Tepalas"),"Shell Alvania EP2 / Retinax EP2"],
+ [T3("Gírkassar pressu","Baler gearboxes","Preso reduktoriai"),"SAE 80W/90"],
+ [T3("Gírkassar færibanda","Conveyor gearboxes","Konvejerių reduktoriai"),"ISO VG 220"],
+ [T3("Loftpressa","Compressor","Kompresorius"),"SAE 10W-30"]
+];
+const UI={
+ is:{tabE:"Villuleit",tabM:"Viðhald og þrif",sub:"Uppsetning 1259 · upplýsingar úr handbók framleiðanda",ph:"Sláðu inn villunúmer eða texta, t.d. 3 eða NO NET",
+  hint:"Sláðu inn númerið sem birtist á skjánum (t.d. <b>3</b>, <b>Err 01</b>) eða texta (t.d. <b>NO NET</b>, <b>olía</b>, <b>stífla</b>) – á íslensku, ensku, litháísku eða filippseysku.",
+  none:"Ekkert fannst fyrir",ocr1:"Les myndina…",ocr2:"Las af mynd:",ocr3:"Náði ekki að lesa villunúmer – sláðu það inn eða veldu úr listanum.", none2:"Prófaðu villunúmerið eitt og sér eða veldu úr listanum.", ref:"Handbók 202-220, bls.",
+  contact:"<b>Ef villan leysist ekki samkvæmt leiðbeiningunum: hafið samband við Flexus áður en lengra er haldið.</b>", elec:"Rafmagnsbilanir: hringið alltaf í rafvirkja.",
+  log:"Skrá daglegt viðhald og þrif", logn:"Hakaðu við það sem búið er að gera og skráðu nafnið þitt. Dagsetning og tími vistast sjálfkrafa.",
+  safe:"<b>Áður en byrjað er:</b> slökkva á vélinni, snúa lyklinum á 0, taka lykilinn úr og hafa hann á sér allan tímann. Ef snúningsarmurinn heldur á bagga þarf að slaka honum niður eða festa hann.",
+  sD:"Daglega – fyrir vinnu",sE:"Daglega – í lok vinnudags",sW:"Vikulega",sM:"Mánaðarlega",sH:"Eftir vinnustundum",sHs:"Lesið af teljara (STAT á skjá)",sO:"Olíur, feiti og síur",
+  thT:"Tími",thW:"Verk",thE:"Tæki",
+  clean:"<b>Ath. við þrif:</b> Aldrei beina háþrýstiþvotti beint á legur, þéttingar, rafmagnskapla eða tengi. Smyrjið varlega svo þéttingar þrýstist ekki út."},
+ en:{tabE:"Error lookup",tabM:"Maintenance & cleaning",sub:"Installation 1259 · information from the manufacturer's manual",ph:"Type error number or text, e.g. 3 or NO NET",
+  hint:"Type the number shown on the display (e.g. <b>3</b>, <b>Err 01</b>) or text (e.g. <b>NO NET</b>, <b>oil</b>, <b>blockage</b>) – in Icelandic, English, Lithuanian or Filipino.",
+  none:"Nothing found for",ocr1:"Reading the photo…",ocr2:"Read from photo:",ocr3:"Could not read an error number – type it or pick from the list.", none2:"Try the error number alone or pick from the list.", ref:"Manual 202-220, p.",
+  contact:"<b>If the error cannot be solved with these instructions: contact Flexus before any further action.</b>", elec:"Electrical faults: always call an electrician.",
+  log:"Log daily maintenance & cleaning", logn:"Tick what has been done and enter your name. Date and time are saved automatically.",
+  safe:"<b>Before you start:</b> switch the machine off, turn the key to 0, withdraw it and keep it with you the whole time. If the turning arm holds a bale, lower or secure it.",
+  sD:"Daily – before work",sE:"Daily – end of the day",sW:"Weekly",sM:"Monthly",sH:"By operating hours",sHs:"Read from the counter (STAT on display)",sO:"Oils, grease and filters",
+  thT:"Interval",thW:"Task",thE:"Unit",
+  clean:"<b>Cleaning:</b> Never use high-pressure cleaning directly on bearings, seals, electrical cables or couplings. Grease carefully so no seal is forced out."},
+ lt:{tabE:"Klaidų paieška",tabM:"Priežiūra ir valymas",sub:"Įrenginys 1259 · informacija iš gamintojo instrukcijos",ph:"Įveskite klaidos numerį arba tekstą, pvz. 3 arba NO NET",
+  hint:"Įveskite ekrane rodomą numerį (pvz. <b>3</b>, <b>Err 01</b>) arba tekstą (pvz. <b>NO NET</b>, <b>alyva</b>, <b>užsikimšimas</b>) – islandų, anglų, lietuvių arba filipiniečių kalba.",
+  none:"Nieko nerasta pagal",ocr1:"Skaitoma nuotrauka…",ocr2:"Nuskaityta:",ocr3:"Nepavyko nuskaityti klaidos numerio – įveskite jį arba pasirinkite iš sąrašo.", none2:"Įveskite tik klaidos numerį arba pasirinkite iš sąrašo.", ref:"Instrukcija 202-220, psl.",
+  contact:"<b>Jei klaidos nepavyksta pašalinti pagal šiuos nurodymus: prieš imdamiesi kitų veiksmų, susisiekite su Flexus.</b>", elec:"Elektros gedimai: visada kvieskite elektriką.",
+  log:"Registruoti kasdienę priežiūrą ir valymą", logn:"Pažymėkite, kas atlikta, ir įrašykite savo vardą. Data ir laikas išsaugomi automatiškai.",
+  safe:"<b>Prieš pradedant:</b> išjunkite mašiną, pasukite raktą į 0, ištraukite jį ir visą laiką laikykite prie savęs. Jei sukimo ranka laiko ryšulį, nuleiskite arba užfiksuokite jį.",
+  sD:"Kasdien – prieš darbą",sE:"Kasdien – darbo dienos pabaigoje",sW:"Kas savaitę",sM:"Kas mėnesį",sH:"Pagal darbo valandas",sHs:"Žiūrėkite skaitiklį (STAT ekrane)",sO:"Alyvos, tepalai ir filtrai",
+  thT:"Intervalas",thW:"Darbas",thE:"Įrenginys",
+  clean:"<b>Valymas:</b> Niekada nenukreipkite aukšto slėgio plovimo tiesiai į guolius, sandariklius, elektros kabelius ar jungtis. Tepkite atsargiai, kad neišstumtumėte sandariklių."}
+};
+
+/* Filipino (Tagalog) */
+PUMP.tl=p=>({h:"Mataas na presyon – pump "+p, c:[["Sira sa paggana ng pump "+p,["Itigil ang makina at pindutin ang EXIT.","Tingnan kung may naipit o bara sa bahaging pinapatakbo ng pump na ito at alisin ito nang ligtas (hawak mo ang susi).","Suriin ang antas ng langis at kung may tagas.","Kung bumalik ang error: tumawag sa service. Ayon sa manwal, gamitin ang fault finding guide at hydraulic scheme."]]], w:"Huwag buksan ang hydraulic system habang may presyon. Ang pag-aayos ng hydraulics ay para lamang sa sanay na tauhan."});
+const TL={
+"1":{h:"Emergency stop", c:[
+ ["Napindot ang EMERGENCY STOP na button sa control panel",["Siguraduhing walang tao sa danger zone.","Ibalik ang EMERGENCY STOP na button sa normal na posisyon.","Pindutin ang RESET at simulan muli."]],
+ ["Napindot ang pulang emergency button sa gilid ng baler",["Hanapin ang napindot na button (may isa sa bawat gilid ng frame) at bitawan ito.","Siguraduhing walang tao sa danger zone.","Pindutin ang EXIT sa display at simulan muli."]],
+ ["Bukas ang mga inspection door ng baler",["Siguraduhing walang tao sa danger zone.","Isara ang mga inspection door.","Pindutin ang RESET at simulan muli."]],
+ ["Nahila ang emergency stop na kable sa bale conveyor",["Alisin muna ang bale/hadlang.","Ilipat ang asul na switch mula \"off\" papuntang \"run\".","Pindutin ang EXIT sa display at simulan muli."]]]},
+"3":{h:"Walang net", c:[
+ ["Ubos na ang net roll – palitan ang roll",["Itigil ang makina, hugutin ang susi at hawakan ito sa buong oras.","Buksan ang bale chamber para madaling maabot ang net roll.","Luwagan ang hawakan para ibaba at alisin ang presyon sa ubos na roll.","Tanggalin ang ubos na roll sa holder (hilahin pataas at palabas ang hawakan).","Ilagay ang bagong roll (tamang direksyon – tingnan ang larawan 2) at itulak pabalik ang hawakan para ma-lock.","Ikabit ang net sa mga air nozzle sa likod ng feeding roll. Kusang ipapasok ng hangin ang net pag-start ng makina.","Mag-ingat sa maiipit: gamitin ang dalawang kamay at hilahin pababa ang hawakan para idiin ang roll sa feeding roll.","Ibalik ang susi, pindutin ang RESET at simulan sa automatic mode."]],
+ ["Nagkabuhol-buhol ang net",["Itigil ang makina, hugutin ang susi at hawakan ito.","Gamitin ang safety stop ng netting unit kapag malapit sa kutsilyo. I-secure ang talim kung kailangan.","Ayusin ang buhol ng net at alisin ang bara."]],
+ ["Hindi naputol ang net – mababa ang presyon ng hangin sa cutting device",["Suriin ang cutting device.","Suriin ang compressor at i-restart kung kailangan."]],
+ ["Hindi naputol ang net – mapurol ang kutsilyo",["Hasain o palitan ang kutsilyo (nakatigil ang makina, hawak mo ang susi)."]]],
+ n:"Higpit ng net: ang adjustment screw at pressure gauge ay nasa kanang bahagi ng chassis malapit sa hydraulic outlets. Para sa basura ng bahay, 0–10 bar ang presyon. Kung buhol o ubos ang net, titigil ang sistema pagkatapos ng ikalawang subok."},
+"5":{h:"Walang wrapping", c:[
+ ["Ubos na ang plastic roll – palitan ang roll",["Hagdan at safety gate lamang ang gamitin papunta sa platform. Dapat BUKAS ang gate sa buong oras.","Huwag lumabas sa dilaw/itim na safety area ng platform (papunta sa baler).","Bitawan ang tensioning lever sa wrapper arm.","Itulak pabalik ang lock ng itaas na roll holder habang iniikot pataas ang holder.","Alisin ang lumang roll at ilagay ang bago. Siguraduhing naka-lock ang itaas na holder.","Ipasok ang film sa pagitan ng tension rollers ayon sa larawan sa wrapper arm.","Itupi nang doble ang dulo at ikabit sa plastic holder ng cutter.","Higpitan ang tension lever.","Isara ang safety gate bago bumaba ng hagdan.","Pindutin ang asul na reset button ng gate at simulan mula sa display."]],
+ ["Aksidenteng naputol ang plastic",["Hilahin ang film at ikabit ayon sa gabay sa wrapper arm (tingnan ang mga hakbang sa itaas)."]],
+ ["May alikabok o dumi sa photocell ng wrapper",["Itigil nang buo ang makina, hugutin ang susi at hawakan ito.","Linisin ang photocell."]],
+ ["Kulang ang presyon mula sa compressor",["Suriin ang compressor at i-restart kung kailangan.","Patuyuin ang tubig (condensate) sa compressor (araw-araw na gawain)."]]],
+ n:"Itago ang mga plastic roll sa temperaturang higit sa 0 °C."},
+"6":{h:"Mataas na presyon pump 1 – kadalasang bara", c:[
+ ["May naipit na materyal / sobrang puno ang bale chamber (pinakakaraniwan)",["Kusang lilipat sa deblockage mode ang remote control. Nagbabago ang button 1–4: 1 = feeder/chamber ends pasulong, 2 = isara ang chamber, 3 = buksan ang chamber (saglit na pindot), 4 = itigil ang mga pump.","Subukan munang paatrasin ang upper feed mat para lumuwag ang materyal.","Kung barado ang chamber: buksan nang kaunti ang likod na bahagi ng chamber gamit ang remote (bababa ang presyon).","Patakbuhin ang chamber ends nang 3–4 segundo.","Isara muli ang chamber at simulan sa automatic mode.","Ulitin hanggang matanggal ang bara."]],
+ ["Kung hindi pa rin gumana",["I-emergency stop ang makina. Iikot ang susi sa 0, hugutin at hawakan ito sa buong oras.","Hanapin ang sanhi ng bara at alisin ang hadlang.","Siguraduhing walang tao sa danger zone bago simulan muli."]],
+ ["Sira sa paggana ng pump 1",["Kung walang bara: tumawag sa service (fault finding guide at hydraulic scheme)."]]],
+ w:"Ang maling paraan ng pag-alis ng bara ay maaaring magdulot ng malubhang pagkaipit o pagkadurog. Laging sundin ang mga tagubilin sa kaligtasan."},
+"17":{h:"Puno ang bale conveyor", c:[
+ ["Puno ang bale conveyor",["Alisin ang mga bale sa conveyor (bale grab sa loader).","Kusang magsisimula muli ang makina kapag naalis na ang mga bale."]],
+ ["Puno ang conveyor AT naka-activate ang emergency stop",["Alisan ng laman ang bale conveyor.","I-activate muli ang emergency stop line (asul na switch mula \"off\" papuntang \"run\").","Pindutin ang RESET at simulan muli."]]]},
+"22":{h:"Overload – spillage conveyor 1 (M5)", c:[
+ ["Nag-trip ang motor protection Q5 ng spillage conveyor 1 (M5)",["Itigil ang makina, iikot ang susi sa 0 at hawakan ito.","Suriin ang spillage conveyor sa ilalim ng baler: barado, naipit o nagyelo ba? May nakapulupot ba sa mga roller? Nasa gitna ba ang rubber belt?","Alisin ang bara at linisin ang mga roller.","I-reset ang motor protection switch Q5 (M5 / spill conveyor 1) sa electrical cabinet.","Ibalik ang susi, pindutin ang EXIT/RESET at simulan muli."]],
+ ["Kung bumalik agad ang error",["Huwag paulit-ulit na i-reset.","Tumawag sa electrician o sa Flexus – maaaring sira ang motor o ang kuryente."]]],
+ w:"Ang may pahintulot lamang ang maaaring magbukas ng electrical cabinet. Panganib ng pagkakuryente.",
+ n:"Electrical drawing 1193: input X114 = motor protection Q5 (2.15 A) ng M5 = spill conveyor 1."},
+"OVL":{h:"Overload sa electrical system", c:[["Sobra ang karga ng electrical system",["I-reset ang motor protection switch sa electrical cabinet.","Simulan ang makina gaya ng dati.","Kung bumalik ang error: tumawag sa service o electrician."]]], w:"Sa anumang problema sa kuryente, tumawag sa electrician. Panganib ng pagkakuryente."},
+"GATE":{h:"Bukas ang gate ng platform", c:[["Bukas ang safety gate ng platform",["Siguraduhing walang tao sa platform.","Isara ang safety gate.","Pindutin ang asul na reset button ng gate at ang EXIT/RESET sa display."]]], n:"Kapag binuksan ang gate, agad titigil ang wrapper arm – pero TULOY ang pag-bale."},
+"OIL":{h:"Mababa ang langis", c:[["Masyadong mababa ang hydraulic oil",["Itigil nang buo ang makina at pindutin ang EXIT.","Lagyan agad ng langis ang tangke – ISO VG 32 lamang.","Tingnan kung may tagas ng langis (hose, cylinder, gearbox)."]]]},
+"LOCK":{h:"Naka-lock ang sistema – mababa ang langis", c:[["Masyadong mababa ang langis – naka-lock ang control system",["Lagyan ng langis na ISO VG 32.","Kusang mag-a-unlock ang sistema kapag sapat na ang langis.","Tingnan kung may tagas ng langis."]]]},
+"FILTER":{h:"Palitan ang return filter", c:[["Barado ang return oil filter",["Itigil nang buo ang makina at pindutin ang EXIT.","Palitan agad ang filter. Flexus filter lamang, art. no. 62-5001."]]]},
+"COLD":{h:"Malamig na panahon (hanggang −15 °C)", c:[["Pag-start sa nagyeyelong panahon",["Painitin muna ang langis: manual mode, menu 3, HEATER On/Off.","Tiyaking hindi nagyelo ang mga scraper ng conveyor at ang floor scrapers.","Panatilihing may kuryente ang electrical cabinet, control panel at oil heater.","Laging alisan ng laman ang makina sa dulo ng araw – walang materyal na dapat maiwan."]]]}
+};
+const TLKW={"22":"overload spill conveyor motor trip","1":"emergency hinto pinto kable","3":"walang net buhol kutsilyo","5":"plastic film photocell walang wrapping","6":"bara barado puno","17":"puno bale","OVL":"kuryente sobra karga","GATE":"gate bukas platform","OIL":"langis mababa tagas","LOCK":"naka-lock langis","FILTER":"filter barado palitan","COLD":"malamig yelo nagyelo heater"};
+E.forEach(e=>{ e.tl = e.pump ? PUMP.tl(e.pump) : TL[e.code]; e.kw += " "+(TLKW[e.code]||"mataas presyon"); });
+
+const TLM={
+ daily:[["Patuyuin ang compressor","Buksan ang drain plug at alisin ang naipong tubig."],["Panatilihing malinis ang compressor","Lalo na ang cooling fins ng cylinder at head."],["Mga gulong ng chamber","Suriin ang pagkasira at kung malayang umiikot. Linisin kung kailangan."],["Bearings ng malaking mat","Tingnan mula sa likod: agwat ng mga mat section, bearing na wala sa gitna ng shaft, deformed na bearing cap."],["Linisin ang mga shaft at roller","Alisin ang materyal na naipon sa shaft at roller."],["Bearings at mga bolt","Suriin ang pagkasira, higpitan at palitan kung kailangan."],["Linisin sa ilalim ng wrapper",""],["Linisin sa paligid ng cylinder at sensor","Sa paligid ng cylinder ng bale chamber at turning arm. Nasa tamang lugar at hindi natatakpan ang mga sensor."],["Photocell ng wrapper","Malinis at walang alikabok."],["Rubber belt ng spillage conveyor","Ibabaw at gilid, nasa gitna ng roller, walang nakapulupot sa roller."],["Pangkalahatang safety check","Malinis at gumagana ang gate switches at emergency stops."]],
+ end:[["Alisan ng laman ang makina","Walang materyal na dapat maiwan sa sistema."],["Floor scrapers","Patakbuhin ang floor scrapers (manual mode, menu 3)."],["Platform at hagdan","Tuyo at malinis para hindi madulas."],["Control panel at mga susi","Panel sa tuyong lugar, susi sa ligtas na lugar."]],
+ week:[["Agwat ng malaking mat","Sa magkabilang gilid: 5–15 mm sa pagitan ng gilid ng chamber at bearing ng malaking mat."],["Grasa 2× isang linggo (o 500 bale)","Lahat ng link bearing ng cylinder sa chamber (8) at turning arm (4)."],["Grasa 1× isang linggo (o 1000 bale)","Chamber bearings, bale stop, tilt cylinder, wrapping table, turning arm, malaking mat (136 na punto)."],["Higpit ng kadena ng conveyor","Dapat umangat ang kadena sa plastic slide bar 0.5–1 m bago ang drive."],["Antas ng langis at tagas","Compressor, hydraulic tank, gearbox at cylinder."],["Compressor","V-belt, non-return at safety valves, air filter."]],
+ month:[["Buwanang grasa (o 4000 bale)","Rollers, feeder, maliit na mat, wrapper rollers, netting unit, chamber ends, wrapper arm. Chain oil sa mga kadena."],["Huwag sobrahan ang grasa sa Y-bearings","Ang articulated bearings (malaking mat) ay kailangan ng maraming grasa."]],
+ hours:["Unang palit ng langis ng compressor (SAE 10W-30)","Palit ng langis ng compressor","Higpit at pagkasira ng kadena","Grasahan ang 8 nipple","Antas ng langis ng gearbox (ISO VG 220)","Grasahan ang bearings","Antas ng langis ng gearbox (SAE 80W/90)","Antas ng langis ng gearbox (ISO VG 220)","Palitan ang hydraulic oil (ISO VG 32) at filter 62-5001","Palit ng langis ng gearbox","Grasahan ang bearing brackets"],
+ oils:["Hydraulic oil","Return filter","Grasa","Gearbox ng baler","Gearbox ng conveyor","Compressor"]
+};
+M_DAILY.forEach((x,i)=>x.tl=TLM.daily[i]); M_END.forEach((x,i)=>x.tl=TLM.end[i]); M_WEEK.forEach((x,i)=>x.tl=TLM.week[i]); M_MONTH.forEach((x,i)=>x.tl=TLM.month[i]);
+M_HOURS.forEach((x,i)=>x[1].tl=TLM.hours[i]); M_OILS.forEach((x,i)=>x[0].tl=TLM.oils[i]);
+UI.tl={tabE:"Hanapin ang error",tabM:"Maintenance at paglilinis",sub:"Installation 1259 · impormasyon mula sa manwal ng gumawa",ph:"I-type ang error number o salita, hal. 3 o NO NET",
+ hint:"I-type ang numerong nasa display (hal. <b>3</b>, <b>Err 01</b>) o salita (hal. <b>NO NET</b>, <b>langis</b>, <b>bara</b>) – sa Icelandic, English, Lithuanian o Filipino.",
+ none:"Walang nakita para sa",ocr1:"Binabasa ang larawan…",ocr2:"Nabasa sa larawan:",ocr3:"Hindi mabasa ang error number – i-type o pumili sa listahan.", none2:"Subukan ang error number lang o pumili sa listahan.", ref:"Manwal 202-220, p.",
+ contact:"<b>Kung hindi maayos ang error gamit ang mga tagubiling ito: tawagan ang Flexus bago gumawa ng iba pa.</b>", elec:"Problema sa kuryente: laging tumawag sa electrician.",
+ log:"I-record ang araw-araw na maintenance at paglilinis", logn:"Markahan ang mga natapos at isulat ang iyong pangalan. Awtomatikong nase-save ang petsa at oras.",
+ safe:"<b>Bago magsimula:</b> patayin ang makina, iikot ang susi sa 0, hugutin ito at hawakan sa buong oras. Kung may hawak na bale ang turning arm, ibaba o i-secure ito.",
+ sD:"Araw-araw – bago magtrabaho",sE:"Araw-araw – sa dulo ng araw",sW:"Lingguhan",sM:"Buwanan",sH:"Ayon sa oras ng operasyon",sHs:"Basahin sa counter (STAT sa display)",sO:"Langis, grasa at filter",
+ thT:"Agwat",thW:"Gawain",thE:"Unit",
+ clean:"<b>Paglilinis:</b> Huwag itutok ang high-pressure washer sa bearings, seals, kable o connector. Mag-grasa nang maingat para hindi lumabas ang seal."};
+
+let L=(()=>{try{const s=localStorage.getItem("flx-lang");if(s)return s}catch(e){}const n=(navigator.language||"").slice(0,2);return n==="lt"?"lt":(n==="fi"&&/fil/.test(navigator.language))||n==="tl"?"tl":n==="is"?"is":"en"})();
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm=s=>(s||"").toLowerCase().replace(/ð/g,"d").replace(/þ/g,"th").replace(/æ/g,"ae").normalize("NFD").replace(/[̀-ͯ]/g,"");
+const isNum=c=>/^\d+$/.test(c);
+E.forEach(e=>{e.hay=norm([e.screen,e.kw,...["is","en","lt","tl"].flatMap(l=>[e[l].h,...e[l].c.map(c=>c[0])])].join(" "))});
+
+function card(e){const d=e[L];
+  let h=`<div class="card"><h2>${isNum(e.code)?`<span class="code">Error ${e.code}</span>`:""}${esc(d.h)}</h2><div class="en">${esc(e.screen)}</div>`;
+  if(d.w) h+=`<div class="safe">⚠ ${esc(d.w)}</div>`;
+  d.c.forEach((c,i)=>{h+=`<div class="cause"><h3>${d.c.length>1?(i+1)+". ":""}${esc(c[0])}</h3><ol>${c[1].map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`});
+  if(d.n) h+=`<div class="note">${esc(d.n)}</div>`;
+  return h+`<div class="ref">${UI[L].ref} ${e.ref}</div></div>`;}
+function search(){
+  const raw=$("q").value.trim(), q=norm(raw), out=$("results");
+  $("chips").classList.toggle("hide",!!q);
+  if(!q){out.innerHTML=`<div class="empty">${UI[L].hint}</div>`;return}
+  const num=/f5|x114/.test(q)?"22":(q.match(/\d+/)||[])[0]; let hits=[];
+  if(num) hits=E.filter(e=>isNum(e.code)&&+e.code===+num);
+  if(!hits.length){const words=q.replace(/\berr(or)?\b/g," ").split(/[\s,.\/–-]+/).filter(w=>w.length>2);
+    const ph=E.filter(e=>e.hay.includes(q));
+    if(ph.length) hits=ph; else {const sc=E.map(e=>[words.filter(w=>e.hay.includes(w)).length,e]).filter(x=>x[0]>0);const mx=Math.max(0,...sc.map(x=>x[0]));hits=sc.filter(x=>x[0]===mx).map(x=>x[1]);}}
+  out.innerHTML=hits.length?hits.map(card).join(""):`<div class="empty">${UI[L].none} „${esc(raw)}“. ${UI[L].none2}</div>`;}
+function chips(){$("chips").innerHTML=E.map(e=>`<button class="chip" data-c="${e.code}"><b>${isNum(e.code)?e.code:"•"}</b> ${esc(e[L].h)}</button>`).join("")}
+$("chips").addEventListener("click",ev=>{const b=ev.target.closest(".chip");if(!b)return;const e=E.find(x=>x.code===b.dataset.c);$("q").value=isNum(e.code)?e.code:e[L].h;search();window.scrollTo({top:0,behavior:"smooth"})});
+$("q").addEventListener("input",search);
+const list=(id,a)=>$(id).innerHTML=a.map((x,i)=>{const [t,d]=x[L];return `<div class="task"><div class="n">${i+1}</div><div>${esc(t)}${d?`<small>${esc(d)}</small>`:""}</div></div>`}).join("");
+function render(){const u=UI[L];document.documentElement.lang=L;
+  document.querySelectorAll(".langs button").forEach(b=>b.classList.toggle("on",b.dataset.l===L));
+  $("sub").textContent=u.sub;$("t-villa").textContent=u.tabE;$("t-vidhald").textContent=u.tabM;$("q").placeholder=u.ph;
+  ["contact","elec","safe","clean"].forEach(k=>$(k).innerHTML=u[k]);
+  ["sD","sE","sW","sM","sH","sHs","sO","thT","thW","thE"].forEach(k=>$(k).textContent=u[k]);
+  $("formbtn").textContent=u.log;$("formnote").textContent=u.logn;
+  list("daily",M_DAILY);list("dailyend",M_END);list("weekly",M_WEEK);list("monthly",M_MONTH);
+  document.querySelector("#hours tbody").innerHTML=M_HOURS.map(r=>`<tr><td class="h">${r[0]}</td><td>${esc(r[1][L])}</td><td>${r[2]}</td></tr>`).join("");
+  document.querySelector("#oils tbody").innerHTML=M_OILS.map(r=>`<tr><td class="h">${esc(r[0][L])}</td><td>${r[1]}</td></tr>`).join("");
+  chips();search();}
+document.querySelector(".langs").addEventListener("click",ev=>{const b=ev.target.closest("button");if(!b)return;L=b.dataset.l;try{localStorage.setItem("flx-lang",L)}catch(e){}render()});
+$("formbtn").href=FORM_URL;$("formbtn").target="_blank";$("formbtn").rel="noopener";
+
+/* ===== Mynd -> OCR (tesseract.js, keyrir í símanum) ===== */
+let tessP=null;
+function loadTess(){if(!tessP)tessP=new Promise((res,rej)=>{const sc=document.createElement('script');sc.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';sc.onload=res;sc.onerror=rej;document.head.appendChild(sc)});return tessP}
+function pickQuery(txt){const t=txt.toUpperCase().replace(/[|]/g,'I');
+  if(/F[5S][-–]?2|[X%]114/.test(t))return "22";
+  let m=t.match(/ERR(?:OR)?\s*[:.]?\s*0?(\d{1,2})/); if(m) return m[1].replace(/^0/,'');
+  const keys=["NO NET","NO WRAPPING","EMERGENCY","BALE CONVEYOR","OVERLOAD","PLATFORM GATE","LOCKED","LOW OIL","OIL LEVEL","FILTER","HIGH PRESSURE PUMP"];
+  for(const k of keys){if(t.includes(k)){if(k==="HIGH PRESSURE PUMP"){const p=t.match(/PUMP\s*(\d)/);const map={"1":"6","2":"7","3":"8","4":"8","5":"9","6":"9","7":"10","8":"11","9":"11"};if(p)return map[p[1]];}return k.toLowerCase();}}
+  return null;}
+$("cam").addEventListener("change",async ev=>{const f=ev.target.files[0];if(!f)return;const o=$("ocr");o.classList.remove("hide");o.textContent=UI[L].ocr1;
+  try{await loadTess();const bmp=await createImageBitmap(f);let all="",q=null;
+    for(const rot of [0,90,270]){const sw=bmp.width,sh=bmp.height,sc=Math.min(2,2000/Math.max(sw,sh));const cv=document.createElement('canvas');const r90=rot%180!==0;cv.width=(r90?sh:sw)*sc;cv.height=(r90?sw:sh)*sc;const x=cv.getContext('2d');x.translate(cv.width/2,cv.height/2);x.rotate(rot*Math.PI/180);x.drawImage(bmp,-sw*sc/2,-sh*sc/2,sw*sc,sh*sc);
+      const r=await Tesseract.recognize(cv,'eng');const txt=(r.data.text||"").replace(/\s+/g," ").trim();all+=" "+txt;q=pickQuery(txt);if(q)break;}
+    all=all.trim();
+    if(q){o.textContent=UI[L].ocr2+" "+all.slice(0,80);$("q").value=q;search();}else{o.textContent=UI[L].ocr3+(all?" ("+all.slice(0,60)+")":"");}
+  }catch(e){o.textContent=UI[L].ocr3;} ev.target.value="";});
+function route(){const v=location.hash==="#vidhald"?"vidhald":"villa";["villa","vidhald"].forEach(n=>{$("v-"+n).classList.toggle("hide",n!==v);$("t-"+n).classList.toggle("on",n===v)})}
+addEventListener("hashchange",route);route();render();
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flexus Typhoon – Villuleit og viðhald</title>
+<style>
+:root{--bg:#f4f5f2;--card:#fff;--ink:#1d2321;--mute:#5e6763;--line:#dfe3df;--accent:#1f6f4a;--accent2:#e9f3ee;--warn:#b3261e;--warnbg:#fdecea;--amber:#8a5a00;--amberbg:#fff4dc}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.45}
+header{background:var(--accent);color:#fff;padding:14px 16px 0}
+header h1{margin:0;font-size:19px;font-weight:650}
+header p{margin:2px 0 10px;font-size:13px;opacity:.85}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.langs{display:flex;gap:4px;flex:0 0 auto}
+.langs button{background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:8px;padding:5px 6px;font-weight:700;font-size:13px;cursor:pointer}
+.langs button.on{background:#fff;color:var(--accent)}
+nav{display:flex;gap:4px}
+nav a{flex:1;text-align:center;padding:11px 6px;color:#fff;text-decoration:none;font-weight:600;font-size:15px;border-radius:10px 10px 0 0;opacity:.8}
+nav a.on{background:var(--bg);color:var(--accent);opacity:1}
+main{max-width:760px;margin:0 auto;padding:14px 14px 40px}
+.search{position:sticky;top:0;background:var(--bg);padding:6px 0 10px;z-index:2}
+.srow{display:flex;gap:8px}.srow input[type=search]{flex:1}
+.cam{flex:0 0 58px;display:flex;align-items:center;justify-content:center;font-size:26px;background:var(--accent);color:#fff;border-radius:12px;cursor:pointer}
+.ocr{font-size:14px;color:var(--mute);margin-top:6px}
+input[type=search]{width:100%;font-size:20px;padding:14px 16px;border:2px solid var(--accent);border-radius:12px;background:#fff;outline:none}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 11px;font-size:14px;cursor:pointer;color:var(--ink)}
+.chip b{color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.card h2{margin:0 0 2px;font-size:19px}
+.code{display:inline-block;background:var(--accent);color:#fff;border-radius:6px;padding:1px 8px;font-size:14px;font-weight:700;margin-right:6px;vertical-align:2px}
+.en{color:var(--mute);font-size:13px;font-family:ui-monospace,Consolas,monospace}
+.cause{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+.cause h3{margin:0 0 4px;font-size:16px}
+ol,ul{margin:4px 0 4px;padding-left:22px}
+li{margin:3px 0}
+.safe{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:9px 12px;font-size:15px;margin-top:10px}
+.note{background:var(--amberbg);color:var(--amber);border-radius:10px;padding:9px 12px;font-size:15px;margin-top:10px}
+.ref{color:var(--mute);font-size:13px;margin-top:8px}
+.empty{color:var(--mute);text-align:center;padding:24px 8px}
+.contact{background:var(--accent2);border-radius:14px;padding:12px 16px;margin-top:18px;font-size:15px}
+.contact a{color:var(--accent);font-weight:600}
+h2.sec{font-size:18px;margin:22px 0 4px;color:var(--accent)}
+.sub{color:var(--mute);font-size:14px;margin:0 0 6px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+td,th{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--mute);font-weight:600}
+td.h{white-space:nowrap;font-weight:600;color:var(--accent)}
+.btn{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:15px;border-radius:12px;font-size:18px;margin:12px 0}
+.task{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.task:last-child{border-bottom:0}
+.task .n{flex:0 0 28px;height:28px;border-radius:50%;background:var(--accent2);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.task small{display:block;color:var(--mute);font-size:14px}
+.hide{display:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="top"><h1>Flexus Typhoon 202-220 · Terra</h1>
+  <div class="langs"><button data-l="is">IS</button><button data-l="en">EN</button><button data-l="lt">LT</button><button data-l="tl">FIL</button></div></div>
+  <p id="sub"></p>
+  <nav><a href="#villa" id="t-villa"></a><a href="#vidhald" id="t-vidhald"></a></nav>
+</header>
+<main>
+<section id="v-villa">
+  <div class="search"><div class="srow"><input type="search" id="q" autocomplete="off" inputmode="search"><label class="cam" title="Mynd / Photo"><input type="file" id="cam" accept="image/*" capture="environment" hidden>📷</label></div><div id="ocr" class="ocr hide"></div></div>
+  <div class="chips" id="chips"></div>
+  <div id="results"></div>
+  <div class="contact"><span id="contact"></span><br>
+    Flexus Balasystem AB · <a href="tel:+4651232500">+46 512 325 00</a> · <a href="mailto:info@flexus.se">info@flexus.se</a><br><span id="elec"></span></div>
+</section>
+<section id="v-vidhald" class="hide">
+  <a class="btn" id="formbtn" href="#"></a>
+  <p class="sub" id="formnote"></p>
+  <div class="safe" id="safe"></div>
+  <h2 class="sec" id="sD"></h2><div class="card" id="daily"></div>
+  <h2 class="sec" id="sE"></h2><div class="card" id="dailyend"></div>
+  <h2 class="sec" id="sW"></h2><div class="card" id="weekly"></div>
+  <h2 class="sec" id="sM"></h2><div class="card" id="monthly"></div>
+  <h2 class="sec" id="sH"></h2><p class="sub" id="sHs"></p>
+  <div class="card"><table id="hours"><thead><tr><th id="thT"></th><th id="thW"></th><th id="thE"></th></tr></thead><tbody></tbody></table></div>
+  <h2 class="sec" id="sO"></h2><div class="card"><table id="oils"><tbody></tbody></table></div>
+  <div class="note" id="clean"></div>
+</section>
+</main>
+<script>
+const FORM_URL = "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=7XH4URgd1EWhtzmXyNl09VzZP0dHBDlCvbCnXwHF0I1UNlc0OTgwRE5OUkwwV1Y0MVA2WVFaQTVMTy4u";
+/* Villugögn – íslenska / English / lietuvių. Úr handbók 202-220 Press Typhoon Helicopter. */
+const PUMP = {
+ is:p=>({h:"Háþrýstingur dæla "+p, c:[["Bilun í virkni dælu "+p,["Stöðvaðu vélina og ýttu á EXIT.","Athugaðu hvort eitthvað sé fast/stíflað í þeim hluta sem dælan knýr og losaðu það á öruggan hátt (lykill á þér).","Athugaðu olíustöðu og leka.","Ef villan kemur aftur: hafðu samband við þjónustuaðila. Handbókin vísar á bilanaleit og vökvateikningu (Hydraulic scheme)."]]], w:"Ekki opna vökvakerfi undir þrýstingi. Viðgerðir á vökvakerfi eingöngu af hæfu starfsfólki."}),
+ en:p=>({h:"High pressure pump "+p, c:[["Error in pump "+p+" function",["Stop the machine and press EXIT.","Check whether anything is stuck/blocked in the part driven by this pump and clear it safely (keep the key with you).","Check the oil level and look for leaks.","If the error returns: contact service. The manual refers to the fault finding guide and the hydraulic scheme to narrow down the problem."]]], w:"Never open the hydraulic system under pressure. Hydraulic repairs by competent staff only."}),
+ lt:p=>({h:"Aukštas slėgis – siurblys "+p, c:[["Siurblio "+p+" veikimo gedimas",["Sustabdykite mašiną ir paspauskite EXIT.","Patikrinkite, ar kas nors neįstrigo/neužsikimšo dalyje, kurią varo šis siurblys, ir saugiai pašalinkite (raktą laikykite prie savęs).","Patikrinkite alyvos lygį ir ar nėra nuotėkių.","Jei klaida kartojasi: kreipkitės į servisą. Instrukcijoje nurodoma naudoti gedimų paieškos vadovą ir hidraulinę schemą."]]], w:"Neatidarinėkite hidraulinės sistemos, kai joje yra slėgis. Hidraulikos remontą atlieka tik kvalifikuoti darbuotojai."})
+};
+
+const E = [
+{code:"1", screen:"Err 01: EMERGENCY STOP (reset 1)", ref:"10, 31",
+ kw:"neyðarstopp emergency stop nodstopp avarinis stabdymas avarinis stop reset hurð hurðir inspection door durelės snúra kapall cable lynas trosas baggafæriband bale conveyor",
+ is:{h:"Neyðarstopp", c:[
+  ["Neyðarstoppshnappur á stjórnborði hefur verið sleginn inn",["Gakktu úr skugga um að enginn sé á hættusvæðinu.","Snúðu NEYÐARSTOPPS-hnappnum aftur í venjulega stöðu.","Ýttu á RESET og ræstu aftur."]],
+  ["Rauður neyðarhnappur á hlið pressunnar",["Finndu hnappinn sem var sleginn inn (einn á hvorri hlið grindarinnar) og losaðu hann.","Gakktu úr skugga um að enginn sé á hættusvæðinu.","Ýttu á EXIT á skjánum og ræstu aftur."]],
+  ["Skoðunarhurðir á pressunni eru opnar",["Gakktu úr skugga um að enginn sé á hættusvæðinu.","Lokaðu skoðunarhurðunum.","Ýttu á RESET og ræstu aftur."]],
+  ["Togað í neyðarstoppssnúru á baggafæribandi",["Fjarlægðu baggann/hindrunina fyrst.","Settu bláa rofann úr „off“ í „run“.","Ýttu á EXIT á skjánum og ræstu aftur."]]]},
+ en:{h:"Emergency stop", c:[
+  ["EMERGENCY STOP button on the control panel is pressed",["Make sure nobody is in the danger zone.","Return the EMERGENCY STOP button to its normal position.","Press RESET and start again."]],
+  ["Red emergency button on the side of the baler",["Find the activated button (one on each side of the frame) and release it.","Make sure nobody is in the danger zone.","Press EXIT on the display and start again."]],
+  ["Inspection doors on the baler are open",["Make sure nobody is in the danger zone.","Close the inspection doors.","Press RESET and start again."]],
+  ["Emergency stop cable on the bale conveyor was pulled",["Remove the bale/obstacle first.","Reset the blue switch from \"off\" to \"run\".","Press EXIT on the display and start again."]]]},
+ lt:{h:"Avarinis stabdymas", c:[
+  ["Paspaustas AVARINIO STABDYMO mygtukas valdymo pulte",["Įsitikinkite, kad pavojingoje zonoje nėra žmonių.","Grąžinkite AVARINIO STABDYMO mygtuką į normalią padėtį.","Paspauskite RESET ir paleiskite iš naujo."]],
+  ["Paspaustas raudonas avarinis mygtukas preso šone",["Suraskite paspaustą mygtuką (po vieną kiekviename rėmo šone) ir atleiskite jį.","Įsitikinkite, kad pavojingoje zonoje nėra žmonių.","Ekrane paspauskite EXIT ir paleiskite iš naujo."]],
+  ["Atidarytos preso apžiūros durelės",["Įsitikinkite, kad pavojingoje zonoje nėra žmonių.","Uždarykite apžiūros dureles.","Paspauskite RESET ir paleiskite iš naujo."]],
+  ["Patrauktas ryšulių konvejerio avarinio stabdymo lynas",["Pirmiausia pašalinkite ryšulį/kliūtį.","Perjunkite mėlyną jungiklį iš „off“ į „run“.","Ekrane paspauskite EXIT ir paleiskite iš naujo."]]]}},
+
+{code:"3", screen:"NO NET – Error 3", ref:"26–27, 30",
+ kw:"net netrúlla no net flækt tangled knife hnífur netting tinklas tinklo ritinys susipainiojo peilis",
+ is:{h:"Ekkert net", c:[
+  ["Netrúllan er tóm – skipta um rúllu",["Stöðvaðu vélina, taktu lykilinn úr og hafðu hann á þér allan tímann.","Opnaðu baggahólfið svo netrúllan komist í þægilega stöðu.","Losaðu handfangið til að lækka og létta á tómu rúllunni.","Taktu tómu rúlluna af haldaranum (dragðu handfangið upp og út).","Settu nýja rúllu á haldarann (rétt snúningsátt skv. mynd 2) og ýttu handfanginu aftur til að læsa.","Krækjaðu netinu á föstu loftstútana fyrir aftan mataravalsinn. Netið blæst sjálfkrafa inn þegar vélin fer í gang.","Varist klemmuhættu: notaðu báðar hendur og dragðu handfangið niður til að þrýsta rúllunni upp að mataravalsinum.","Settu lykilinn aftur í, ýttu á RESET og ræstu í sjálfvirkum ham."]],
+  ["Netið hefur flækst",["Stöðvaðu vélina, taktu lykilinn úr og hafðu hann á þér.","Notaðu öryggisstoppið á netbúnaðinum ef unnið er nálægt hnífnum. Festu hnífsblaðið ef þarf.","Greiddu úr netinu og fjarlægðu það sem stíflar."]],
+  ["Netið klippist ekki – of lítill loftþrýstingur á skurðarbúnaði",["Athugaðu skurðarbúnaðinn.","Athugaðu loftpressuna og endurræstu hana ef þarf."]],
+  ["Netið klippist ekki – bitlaus hnífur",["Brýndu eða skiptu um hnífinn (vélin stöðvuð og lykillinn á þér)."]]],
+  n:"Netstrekking: stilliskrúfa og þrýstimælir eru hægra megin á grindinni við vökvaúttökin. Fyrir heimilissorp á þrýstingur að vera 0–10 bar. Ef netið er flækt eða búið stöðvast kerfið eftir aðra tilraun."},
+ en:{h:"No net", c:[
+  ["The net roll is empty – replace the roll",["Stop the machine, withdraw the key and keep it with you the whole time.","Open the bale chamber so the net roll is in a convenient position.","Loosen the handle to lower and release the pressure on the empty roll.","Remove the empty roll from the holder (pull the handle up and out).","Place a new roll on the holder (correct direction, see picture 2) and push the handle back to lock it.","Hook the net onto the fixed air nozzles behind the feeding roll. The net is loaded automatically with compressed air at restart.","Watch out for pinch points: use both hands and pull the handle down to push the roll up against the feeding roll.","Put the key back, press RESET and restart in automatic mode."]],
+  ["The net is tangled",["Stop the machine, withdraw the key and keep it with you.","Use the safety stop on the netting unit when working near the knife. Secure the knife blade if necessary.","Untangle the net and remove any obstruction."]],
+  ["Net is not cut – low air pressure in the cutting device",["Check the cutting device.","Check the compressor and restart it if necessary."]],
+  ["Net is not cut – blunt knife",["Sharpen or replace the knife (machine stopped, key with you)."]]],
+  n:"Net tension: adjustment screw and pressure gauge on the right side of the chassis by the hydraulic outlets. For household waste the pressure should be 0–10 bar. If the net is tangled or empty, the system stops after the second attempt."},
+ lt:{h:"Nėra tinklo", c:[
+  ["Tinklo ritinys tuščias – pakeiskite ritinį",["Sustabdykite mašiną, ištraukite raktą ir visą laiką laikykite jį prie savęs.","Atidarykite ryšulio kamerą, kad tinklo ritinys būtų patogioje padėtyje.","Atlaisvinkite rankeną, kad nuleistumėte ir atpalaiduotumėte tuščią ritinį.","Nuimkite tuščią ritinį nuo laikiklio (patraukite rankeną aukštyn ir į išorę).","Uždėkite naują ritinį (teisinga kryptis – žr. 2 pav.) ir stumkite rankeną atgal, kad užfiksuotumėte.","Užkabinkite tinklą ant fiksuotų oro antgalių už tiekimo volo. Paleidus mašiną tinklas įpučiamas automatiškai.","Saugokitės prispaudimo: abiem rankomis traukite rankeną žemyn, kad prispaustumėte ritinį prie tiekimo volo.","Įstatykite raktą, paspauskite RESET ir paleiskite automatiniu režimu."]],
+  ["Tinklas susipainiojo",["Sustabdykite mašiną, ištraukite raktą ir laikykite jį prie savęs.","Dirbdami prie peilio naudokite tinklo įrenginio saugos stabdiklį. Jei reikia, užfiksuokite peilio ašmenis.","Išpainiokite tinklą ir pašalinkite kliūtį."]],
+  ["Tinklas nenukerpamas – per mažas oro slėgis pjovimo įrenginyje",["Patikrinkite pjovimo įrenginį.","Patikrinkite kompresorių ir, jei reikia, paleiskite jį iš naujo."]],
+  ["Tinklas nenukerpamas – atšipęs peilis",["Pagaląskite arba pakeiskite peilį (mašina sustabdyta, raktas pas jus)."]]],
+  n:"Tinklo įtempimas: reguliavimo varžtas ir manometras dešinėje rėmo pusėje prie hidraulinių išvadų. Buitinėms atliekoms slėgis turi būti 0–10 bar. Jei tinklas susipainiojęs ar baigėsi, sistema sustoja po antro bandymo."}},
+
+{code:"5", screen:"NO WRAPPING – Error 5", ref:"25, 30",
+ kw:"plast plastrúlla wrapping film filma pökkun ljósnemi photocell wrapper plėvelė plėvelės ritinys vyniotuvas vyniojimas fotoelementas",
+ is:{h:"Engin plastpökkun", c:[
+  ["Plastrúllan er tóm – skipta um rúllu",["Farðu aðeins upp stigann og í gegnum öryggishliðið. Hliðið á að vera OPIÐ allan tímann.","Aldrei stíga út fyrir gul/svart merkta öryggissvæðið á pallinum (í átt að pressunni).","Losaðu strekkingarstöngina á pökkunararminum.","Ýttu læsingunni á efri rúlluhaldaranum aftur um leið og þú snýrð haldaranum upp.","Taktu gömlu rúlluna úr og lyftu nýrri á sinn stað. Gakktu úr skugga um að efri haldarinn læsist.","Þræddu filmuna á milli strekkivalsanna skv. myndinni á pökkunararminum.","Brjóttu lausa endann tvöfalt og festu hann í plasthaldarann á skeranum.","Hertu strekkingarstöngina.","Lokaðu öryggishliðinu áður en þú ferð niður stigann.","Ýttu á bláa reset-hnappinn fyrir hliðið og ræstu af skjánum."]],
+  ["Plastið hefur slitnað/klippst óvart",["Dragðu filmuna út og festu hana skv. leiðbeiningum á pökkunararminum (sjá skref að ofan)."]],
+  ["Ryk eða óhreinindi á ljósnema pökkunarvélar",["Stöðvaðu vélina alveg, taktu lykilinn úr og hafðu hann á þér.","Hreinsaðu ljósnemann."]],
+  ["Loftpressan gefur ekki nægan þrýsting",["Athugaðu loftpressuna og endurræstu hana ef þarf.","Tæmdu þéttivatn af pressunni (daglegt verk)."]]],
+  n:"Geymið plastrúllur við hitastig yfir 0 °C."},
+ en:{h:"No wrapping", c:[
+  ["The plastic roll is empty – replace the roll",["Use only the stairs and the safety gate to reach the platform. Leave the gate OPEN the whole time.","Never step outside the yellow/black marked safety area on the platform (towards the baler).","Release the tensioning lever on the wrapper arm.","Push the lock on the upper roll holder backwards while turning the holder upwards.","Remove the old roll and lift the new one into place. Make sure the upper holder locks.","Thread the film between the tension rollers as shown on the wrapper arm.","Double-fold the loose end and attach it to the plastic holder on the cutter.","Tighten the tension lever.","Close the safety gate before going down the stairs.","Press the blue reset button for the gate and restart from the display."]],
+  ["The plastic was accidentally cut",["Pull out the film and attach it as shown on the wrapper arm (see steps above)."]],
+  ["Dust or dirt on the wrapper photocell",["Stop the machine completely, withdraw the key and keep it with you.","Clean the photocell."]],
+  ["The compressor does not give enough pressure",["Check the compressor and restart it if necessary.","Drain condensed water from the compressor (daily task)."]]],
+  n:"Store stretch film rolls above 0 °C."},
+ lt:{h:"Nėra vyniojimo", c:[
+  ["Plėvelės ritinys tuščias – pakeiskite ritinį",["Į platformą lipkite tik laiptais ir per apsauginius vartus. Vartai turi būti ATIDARYTI visą laiką.","Niekada neišeikite už geltonai/juodai pažymėtos saugios zonos platformoje (preso link).","Atleiskite įtempimo svirtį ant vyniotuvo rankos.","Stumkite viršutinio ritinio laikiklio fiksatorių atgal ir kartu pakelkite laikiklį aukštyn.","Išimkite seną ritinį ir įkelkite naują. Įsitikinkite, kad viršutinis laikiklis užsifiksavo.","Perverkite plėvelę tarp įtempimo volų, kaip parodyta ant vyniotuvo rankos.","Laisvą galą perlenkite dvigubai ir pritvirtinkite prie plėvelės laikiklio ant kirptuvo.","Užveržkite įtempimo svirtį.","Prieš lipdami laiptais žemyn uždarykite apsauginius vartus.","Paspauskite mėlyną vartų RESET mygtuką ir paleiskite iš ekrano."]],
+  ["Plėvelė netyčia nutrūko/nukirpta",["Ištraukite plėvelę ir pritvirtinkite, kaip parodyta ant vyniotuvo rankos (žr. žingsnius aukščiau)."]],
+  ["Dulkės ar nešvarumai ant vyniotuvo fotoelemento",["Visiškai sustabdykite mašiną, ištraukite raktą ir laikykite jį prie savęs.","Nuvalykite fotoelementą."]],
+  ["Kompresorius nesukuria pakankamo slėgio",["Patikrinkite kompresorių ir, jei reikia, paleiskite iš naujo.","Išleiskite kondensatą iš kompresoriaus (kasdienis darbas)."]]],
+  n:"Plėvelės ritinius laikykite aukštesnėje nei 0 °C temperatūroje."}},
+
+{code:"6", screen:"HIGH PRESSURE PUMP 1 – Error 6", ref:"15, 27–28, 30",
+ kw:"stífla blockage blocked overload yfirfullt hólf pump 1 dæla háþrýstingur high pressure deblock užsikimšimas užsikišo perkrauta kamera siurblys aukštas slėgis",
+ is:{h:"Háþrýstingur dæla 1 – oftast stífla", c:[
+  ["Efni fast / baggahólf yfirfullt (algengast)",["Fjarstýringin fer sjálfkrafa í losunarham. Hnappar 1–4 breytast: 1 = mötun/hólfendar áfram, 2 = loka hólfi, 3 = opna hólf (stutt ýting), 4 = stöðva dælur.","Reyndu fyrst að keyra efri mötunarmottuna afturábak til að losa efnið.","Ef hólfið er stíflað: opnaðu aftari hluta hólfsins örlítið með fjarstýringunni (léttir á þrýstingi).","Keyrðu hólfendana í 3–4 sekúndur.","Lokaðu hólfinu aftur og ræstu í sjálfvirkum ham.","Endurtaktu eins oft og þarf þar til stíflan losnar."]],
+  ["Ef það dugar ekki",["Neyðarstöðvaðu vélina. Snúðu lyklinum á 0, taktu hann úr og hafðu hann á þér allan tímann.","Finndu orsök stíflunnar og fjarlægðu hindrunina.","Gakktu úr skugga um að enginn sé á hættusvæðinu áður en ræst er aftur."]],
+  ["Bilun í virkni dælu 1",["Ef engin stífla er: hafðu samband við þjónustuaðila (bilanaleit og vökvateikning)."]]],
+  w:"Röng vinnubrögð við að losa stíflur geta valdið alvarlegum klemmu- og kremmuáverkum. Fylgið alltaf öryggisleiðbeiningum."},
+ en:{h:"High pressure pump 1 – usually a blockage", c:[
+  ["Material stuck / bale chamber overloaded (most common)",["The remote control automatically switches to deblockage mode. Buttons 1–4 change: 1 = feeder/chamber ends forward, 2 = close chamber, 3 = open chamber (short press), 4 = stop pumps.","First try to reverse the upper feed mat to free the material.","If the chamber is blocked: open the rear chamber section slightly with the remote (reduces pressure).","Run the chamber ends for 3–4 seconds.","Close the chamber section again and restart in automatic mode.","Repeat as many times as needed until deblocked."]],
+  ["If that does not work",["Emergency stop the machine. Turn the key to 0, withdraw it and keep it with you the whole time.","Find the cause of the blockage and remove the obstacle.","Make sure nobody is in the danger zone before restarting."]],
+  ["Error in pump 1 function",["If there is no blockage: contact service (fault finding guide and hydraulic scheme)."]]],
+  w:"Incorrect operations when clearing material can cause serious clamping and crushing injuries. Always follow the safety instructions."},
+ lt:{h:"Aukštas slėgis – siurblys 1 (dažniausiai užsikimšimas)", c:[
+  ["Įstrigo medžiaga / perpildyta ryšulio kamera (dažniausia priežastis)",["Nuotolinio valdymo pultas automatiškai persijungia į atblokavimo režimą. Mygtukai 1–4 keičiasi: 1 = tiektuvas/kameros galai pirmyn, 2 = uždaryti kamerą, 3 = atidaryti kamerą (trumpai paspausti), 4 = sustabdyti siurblius.","Pirmiausia pabandykite paleisti viršutinį tiekimo kilimą atgal, kad atlaisvintumėte medžiagą.","Jei kamera užsikimšusi: pultu šiek tiek atidarykite galinę kameros dalį (sumažina slėgį).","Paleiskite kameros galus 3–4 sekundėms.","Vėl uždarykite kamerą ir paleiskite automatiniu režimu.","Kartokite, kol užsikimšimas pašalinamas."]],
+  ["Jei tai nepadeda",["Avariniu būdu sustabdykite mašiną. Pasukite raktą į 0, ištraukite ir visą laiką laikykite prie savęs.","Raskite užsikimšimo priežastį ir pašalinkite kliūtį.","Prieš paleisdami įsitikinkite, kad pavojingoje zonoje nėra žmonių."]],
+  ["Siurblio 1 veikimo gedimas",["Jei užsikimšimo nėra: kreipkitės į servisą (gedimų paieškos vadovas ir hidraulinė schema)."]]],
+  w:"Netinkamai šalinant užsikimšimą galima sunkiai susižaloti (prispaudimas, sutraiškymas). Visada laikykitės saugos nurodymų."}},
+
+{code:"7", screen:"HIGH PRESSURE PUMP 2 – Error 7", ref:"30–31, 40", pump:"2", kw:"pump 2 dæla siurblys háþrýstingur high pressure aukštas slėgis"},
+{code:"8", screen:"HIGH PRESSURE PUMP 3/4 – Error 8", ref:"30–31, 40", pump:"3/4", kw:"pump 3 4 dæla siurblys háþrýstingur high pressure aukštas slėgis"},
+{code:"9", screen:"HIGH PRESSURE PUMP 5/6 – Error 9", ref:"30–31, 40", pump:"5/6", kw:"pump 5 6 dæla siurblys háþrýstingur high pressure aukštas slėgis"},
+{code:"10", screen:"HIGH PRESSURE PUMP 7 – Error 10", ref:"30–31, 40", pump:"7", kw:"pump 7 dæla siurblys háþrýstingur high pressure aukštas slėgis"},
+{code:"11", screen:"HIGH PRESSURE PUMP 8/9 – Error 11", ref:"30–31, 40", pump:"8/9", kw:"pump 8 9 dæla siurblys háþrýstingur high pressure aukštas slėgis"},
+
+{code:"17", screen:"BALE CONVEYOR FULL – Error 17", ref:"31",
+ kw:"bale conveyor full baggafæriband fullt baggar ryšulių konvejeris pilnas ryšuliai",
+ is:{h:"Baggafæriband fullt", c:[
+  ["Baggafæribandið er fullt",["Fjarlægðu bagga af baggafæribandinu (baggagrip á hjólaskóflu).","Vélin fer sjálfkrafa aftur í gang þegar baggarnir hafa verið fjarlægðir."]],
+  ["Færibandið er fullt OG neyðarstopp virkt",["Tæmdu baggafæribandið.","Endurvirkjaðu neyðarstoppssnúruna (blár rofi úr „off“ í „run“).","Ýttu á RESET og ræstu aftur."]]]},
+ en:{h:"Bale conveyor full", c:[
+  ["The bale conveyor is full",["Remove the bales from the bale conveyor (bale grab on the loader).","The machine restarts automatically when the bales are removed."]],
+  ["Conveyor full AND emergency stop activated",["Empty the bale conveyor.","Reactivate the emergency line stop (blue switch from \"off\" to \"run\").","Press RESET and start again."]]]},
+ lt:{h:"Ryšulių konvejeris pilnas", c:[
+  ["Ryšulių konvejeris pilnas",["Nuimkite ryšulius nuo konvejerio (ryšulių griebtuvu ant krautuvo).","Nuėmus ryšulius mašina automatiškai pasileidžia iš naujo."]],
+  ["Konvejeris pilnas IR įjungtas avarinis stabdymas",["Ištuštinkite ryšulių konvejerį.","Vėl įjunkite avarinio stabdymo lyną (mėlynas jungiklis iš „off“ į „run“).","Paspauskite RESET ir paleiskite iš naujo."]]]}},
+
 {code:"OVL", screen:"OVERLOAD ALARM", ref:"9, 31",
  kw:"overload yfirálag mótorvörn rafmagn rafmagnsskápur motor protection electrical cabinet perkrova variklio apsauga elektros spinta",
  is:{h:"Yfirálag á rafkerfi", c:[["Rafkerfið er yfirlestað",["Endursettu mótorvarnarrofann (motor protection switch) í rafmagnsskápnum.","Ræstu vélina eins og venjulega.","Ef villan kemur aftur: hafðu samband við þjónustuaðila eða rafvirkja."]]], w:"Við allar truflanir í rafkerfi skal hafa samband við rafvirkja. Hætta á raflosti."},
