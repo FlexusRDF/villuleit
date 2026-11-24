@@ -2,6 +2,9 @@
 <html lang="is">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Flexus Typhoon – Villuleit og viðhald</title>
 <style>
@@ -464,11 +467,11 @@ function search(){
   out.innerHTML=hits.length?hits.map(card).join(""):`<div class="empty">${UI[L].none} „${esc(raw)}“. ${UI[L].none2}</div>`;}
 function chips(){$("chips").innerHTML=E.map(e=>`<button class="chip" data-c="${e.code}"><b>${isNum(e.code)?e.code:"•"}</b> ${esc(e[L].h)}</button>`).join("")}
 $("chips").addEventListener("click",ev=>{const b=ev.target.closest(".chip");if(!b)return;const e=E.find(x=>x.code===b.dataset.c);$("q").value=isNum(e.code)?e.code:e[L].h;search();window.scrollTo({top:0,behavior:"smooth"})});
-$("q").addEventListener("input",search);
+["input","keyup","change","search"].forEach(ev=>$("q").addEventListener(ev,search));
 const list=(id,a)=>$(id).innerHTML=a.map((x,i)=>{const [t,d]=x[L];return `<div class="task"><div class="n">${i+1}</div><div>${esc(t)}${d?`<small>${esc(d)}</small>`:""}</div></div>`}).join("");
 function render(){const u=UI[L];document.documentElement.lang=L;
   document.querySelectorAll(".langs button").forEach(b=>b.classList.toggle("on",b.dataset.l===L));
-  $("sub").textContent=u.sub;$("t-villa").textContent=u.tabE;$("t-vidhald").textContent=u.tabM;$("q").placeholder=u.ph;
+  $("sub").textContent=u.sub+" · v. 24.11.2026";$("t-villa").textContent=u.tabE;$("t-vidhald").textContent=u.tabM;$("q").placeholder=u.ph;
   ["contact","elec","safe","clean"].forEach(k=>$(k).innerHTML=u[k]);
   ["sD","sE","sW","sM","sH","sHs","sO","thT","thW","thE"].forEach(k=>$(k).textContent=u[k]);
   $("formbtn").textContent=u.log;$("formnote").textContent=u.logn;
